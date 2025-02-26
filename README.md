@@ -1,6 +1,6 @@
 # Apache Velocity
 
-- Apache Velocity Template Language (VTL) support for Visual Studio Code
+-   Apache Velocity Template Language (VTL) with Hannon Hill's Cascade Velocity Tools support for Visual Studio Code
 
 ## ScreenShot
 
@@ -8,16 +8,15 @@
 
 ## TIPS
 
-- You can add `"emmet.includeLanguages": {"velocity": "html"}` in your user setting for enable emmet in velocity!
+-   You can add `"emmet.includeLanguages": {"velocity": "html"}` in your user setting for enable emmet in velocity!
 
 ## Features
 
-- syntaxes highlight
-- snippets
-- code beautify/formatting (Integrated with [prettydiff](http://prettydiff.com/))
+-   syntaxes highlight
+-   snippets
+-   code beautify/formatting (Integrated with [prettydiff](http://prettydiff.com/))
+-   includes hannonhill's cascade tools
 
-## Feedback
-
-- [Help me improve](https://github.com/luqimin/tinyvm/issues)
+Forked from [luqimin](https://github.com/luqimin/tinyvm)
 
 **Enjoy!**

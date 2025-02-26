@@ -208,5 +208,895 @@
         "body": ".size()",
         "description": "",
         "scope": "source.velocity"
+    },
+    "$contentRoot": {
+        "prefix": "$contentRoot",
+        "body": "\\$contentRoot",
+        "description": "Returns a JDOM Element containing the XML supplied for the current region."
+    },
+    "$currentPage": {
+        "prefix": "$currentPage",
+        "body": "\\$currentPage",
+        "description": "Returns the current page as an API object."
+    },
+    "$currentPagePath": {
+        "prefix": "$currentPagePath",
+        "body": "\\$currentPagePath",
+        "description": "Returns the path of the current page."
+    },
+    "$currentPageSiteName": {
+        "prefix": "$currentPageSiteName",
+        "body": "\\$currentPageSiteName",
+        "description": "Returns the name of the current page's site."
+    },
+    "$enabledCustomDirectives": {
+        "prefix": "$enabledCustomDirectives",
+        "body": "\\$enabledCustomDirectives",
+        "description": "Returns all available custom directives in the CMS environment."
+    },
+    "$_.locate": {
+        "prefix": "$_.locate",
+        "body": "\\$_.locate(\"${1:path}\", \"${2:type}\", \"${3:siteName}\")",
+        "description": "Locate an asset at the given path, with the specified type, and optionally inside of a site with the specified siteName."
+    },
+    "$_.locateBlock": {
+        "prefix": "$_.locateBlock",
+        "body": "\\$_.locateBlock(\"${1:path}\", \"${2:siteName}\")",
+        "description": "Locate a Block at the given path and optionally inside of a site with the specified siteName."
+    },
+    "$_.locateFile": {
+        "prefix": "$_.locateFile",
+        "body": "\\$_.locateFile(\"${1:path}\", \"${2:siteName}\")",
+        "description": "Locate a File at the given path and optionally inside of a site with the specified siteName."
+    },
+    "$_.locateFolder": {
+        "prefix": "$_.locateFolder",
+        "body": "\\$_.locateFolder(\"${1:path}\", \"${2:siteName}\")",
+        "description": "Locate a Folder at the given path and optionally inside of a site with the specified siteName."
+    },
+    "$_.locateFormat": {
+        "prefix": "$_.locateFormat",
+        "body": "\\$_.locateFormat(\"${1:path}\", \"${2:siteName}\")",
+        "description": "Locate a Format at the given path and optionally inside of a site with the specified siteName."
+    },
+    "$_.locateLinkable": {
+        "prefix": "$_.locateLinkable",
+        "body": "\\$_.locateLinkable(\"${1:path}\", \"${2:siteName}\")",
+        "description": "Locate a Page, File, or External Link at the given path and optionally inside of a site with the specified siteName."
+    },
+    "$_.locatePage": {
+        "prefix": "$_.locatePage",
+        "body": "\\$_.locatePage(\"${1:path}\", \"${2:siteName}\")",
+        "description": "Locate a Page at the given path and optionally inside of a site with the specified siteName."
+    },
+    "$_.locateReference": {
+        "prefix": "$_.locateReference",
+        "body": "\\$_.locateReference(\"${1:path}\", \"${2:siteName}\")",
+        "description": "Locate a Reference at the given path and optionally inside of a site with the specified siteName."
+    },
+    "$_.locateSymlink": {
+        "prefix": "$_.locateSymlink",
+        "body": "\\$_.locateSymlink(\"${1:path}\", \"${2:siteName}\")",
+        "description": "Locate an External Link at the given path and optionally inside of a site with the specified siteName."
+    },
+    "$_.query": {
+        "prefix": "$_.query",
+        "body": "\\$_.query()",
+        "description": "Creates the query object."
+    },
+    "$_.query().byContentType": {
+        "prefix": "$_.query().byContentType",
+        "body": "\\$_.query().byContentType(\"${1:path}\").execute()",
+        "description": "Return assets using the Content Type at the path provided."
+    },
+    "$_.query().byMetadataSet": {
+        "prefix": "$_.query().byMetadataSet",
+        "body": "\\$_.query().byMetadataSet(\"${1:path}\").execute()",
+        "description": "Return assets using the Metadata Set at the path provided."
+    },
+    "$_.query().byDataDefinition": {
+        "prefix": "$_.query().byDataDefinition",
+        "body": "\\$_.query().byDataDefinition(\"${1:path}\").execute()",
+        "description": "Return assets using the Data Definition at the path provided."
+    },
+    "$_.query().bySiteName": {
+        "prefix": "$_.query().bySiteName",
+        "body": "\\$_.query().bySiteName(\"${1:name}\").execute()",
+        "description": "Return assets from the specified site in the query results."
+    },
+    "$_.query().byFolderPath": {
+        "prefix": "$_.query().byFolderPath",
+        "body": "\\$_.query().byFolderPath(\"${1:path}\").execute()",
+        "description": "Return assets within the given folder path."
+    },
+    "$_.query().hasAnyPaths": {
+        "prefix": "$_.query().hasAnyPaths",
+        "body": "\\$_.query().hasAnyPaths([\"${1:paths}\"]).execute()",
+        "description": "Return assets with the specific paths provided."
+    },
+    "$_.query().hasMetadata": {
+        "prefix": "$_.query().hasMetadata",
+        "body": "\\$_.query().hasMetadata(\"${1:name}\", \"${2:value}\").execute()",
+        "description": "Return assets with metadata where name is set to value."
+    },
+    "$_.query().hasAnyMetadataValues": {
+        "prefix": "$_.query().hasAnyMetadataValues",
+        "body": "\\$_.query().hasAnyMetadataValues(\"${1:name}\", [\"${2:values}\"]).execute()",
+        "description": "Return assets with metadata where name is set to any of values."
+    },
+    "$_.query().hasStructuredData": {
+        "prefix": "$_.query().hasStructuredData",
+        "body": "\\$_.query().hasStructuredData(\"${1:structuredDataFieldPath}\", \"${2:structuredDataFieldValue}\").execute()",
+        "description": "Return assets with structured data where structuredDataFieldPath is set to structuredDataFieldValue."
+    },
+    "$_.query().hasAnyStructuredDataValues": {
+        "prefix": "$_.query().hasAnyStructuredDataValues",
+        "body": "\\$_.query().hasAnyStructuredDataValues(\"${1:structuredDataFieldPath}\", [\"${2:structuredDataFieldValues}\"]).execute()",
+        "description": "Return assets with structured data where structuredDataFieldPath has one of the given structuredDataFieldValues."
+    },
+    "$_.query().hasStructuredDataByFieldId": {
+        "prefix": "$_.query().hasStructuredDataByFieldId",
+        "body": "\\$_.query().hasStructuredDataByFieldId(\"${1:structuredDataFieldId}\", \"${2:structuredDataFieldValue}\").execute()",
+        "description": "Return assets with structured data field with structuredDataFieldId set to structuredDataFieldValue."
+    },
+    "$_.query().hasAnyStructuredDataValuesByFieldId": {
+        "prefix": "$_.query().hasAnyStructuredDataValuesByFieldId",
+        "body": "\\$_.query().hasAnyStructuredDataValuesByFieldId(\"${1:structuredDataFieldId}\", [\"${2:structuredDataFieldValues}\"]).execute()",
+        "description": "Return assets with structured data field with structuredDataFieldId has one of the given structuredDataFieldValue."
+    },
+    "$_.query().hasTag": {
+        "prefix": "$_.query().hasTag",
+        "body": "\\$_.query().hasTag(\"${1:tag}\").execute()",
+        "description": "Return assets that have at least the specified tag assigned."
+    },
+    "$_.query().hasAnyTags": {
+        "prefix": "$_.query().hasAnyTags",
+        "body": "\\$_.query().hasAnyTags([\"${1:tags}\"]).execute()",
+        "description": "Return assets that have any of the specified tags assigned."
+    },
+    "$_.query().includeBlocks": {
+        "prefix": "$_.query().includeBlocks",
+        "body": "\\$_.query().includeBlocks(${1:true}).execute()",
+        "description": "Include Block assets in the query results."
+    },
+    "$_.query().blocksOnly": {
+        "prefix": "$_.query().blocksOnly",
+        "body": "\\$_.query().blocksOnly().execute()",
+        "description": "Include only Block assets in the query results."
+    },
+    "$_.query().includeFiles": {
+        "prefix": "$_.query().includeFiles",
+        "body": "\\$_.query().includeFiles(${1:true}).execute()",
+        "description": "Include File assets in the query results."
+    },
+    "$_.query().filesOnly": {
+        "prefix": "$_.query().filesOnly",
+        "body": "\\$_.query().filesOnly().execute()",
+        "description": "Include only File assets in the query results."
+    },
+    "$_.query().includeFolders": {
+        "prefix": "$_.query().includeFolders",
+        "body": "\\$_.query().includeFolders(${1:true}).execute()",
+        "description": "Include Folder assets in the query results."
+    },
+    "$_.query().foldersOnly": {
+        "prefix": "$_.query().foldersOnly",
+        "body": "\\$_.query().foldersOnly().execute()",
+        "description": "Include only Folder assets in the query results."
+    },
+    "$_.query().includePages": {
+        "prefix": "$_.query().includePages",
+        "body": "\\$_.query().includePages(${1:true}).execute()",
+        "description": "Include Page assets in the query results."
+    },
+    "$_.query().pagesOnly": {
+        "prefix": "$_.query().pagesOnly",
+        "body": "\\$_.query().pagesOnly().execute()",
+        "description": "Include only Page assets in the query results."
+    },
+    "$_.query().includeSymlinks": {
+        "prefix": "$_.query().includeSymlinks",
+        "body": "\\$_.query().includeSymlinks(${1:true}).execute()",
+        "description": "Include External Link assets in the query results."
+    },
+    "$_.query().symlinksOnly": {
+        "prefix": "$_.query().symlinksOnly",
+        "body": "\\$_.query().symlinksOnly().execute()",
+        "description": "Include only Symlink assets in the query results."
+    },
+    "$_.query().indexableOnly": {
+        "prefix": "$_.query().indexableOnly",
+        "body": "\\$_.query().indexableOnly(${1:true}).execute()",
+        "description": "Include only assets enabled for indexing in the query results."
+    },
+    "$_.query().maxResults": {
+        "prefix": "$_.query().maxResults",
+        "body": "\\$_.query().maxResults(${1:amount}).execute()",
+        "description": "Limit the number of assets returned by the query."
+    },
+    "$_.query().preloadDynamicMetadata": {
+        "prefix": "$_.query().preloadDynamicMetadata",
+        "body": "\\$_.query().preloadDynamicMetadata().execute()",
+        "description": "Query will preload dynamic metadata."
+    },
+    "$_.query().preloadStructuredData": {
+        "prefix": "$_.query().preloadStructuredData",
+        "body": "\\$_.query().preloadStructuredData().execute()",
+        "description": "Query will preload structured data."
+    },
+    "$_.query().publishableOnly": {
+        "prefix": "$_.query().publishableOnly",
+        "body": "\\$_.query().publishableOnly(${1:true}).execute()",
+        "description": "Include only assets enabled for publishing in the query results."
+    },
+    "$_.query().searchAcrossAllSites": {
+        "prefix": "$_.query().searchAcrossAllSites",
+        "body": "\\$_.query().searchAcrossAllSites().execute()",
+        "description": "Return assets from any site in the query results."
+    },
+    "$_.query().sortBy": {
+        "prefix": "$_.query().sortBy",
+        "body": "\\$_.query().sortBy(\"${1:field}\").execute()",
+        "description": "Sort the query results by the specified field."
+    },
+    "$_.query().sortDirection": {
+        "prefix": "$_.query().sortDirection",
+        "body": "\\$_.query().sortDirection(\"${1:direction}\").execute()",
+        "description": "Used in conjunction with sortBy(), specify the direction of the sort. Directions can be 'asc' or 'desc'."
+    },
+    "$_.query().siteName": {
+        "prefix": "$_.query().siteName",
+        "body": "\\$_.query().bySiteName(\"${1:siteName}\").execute()",
+        "description": "Deprecated. Use $_.query().bySiteName instead."
+    },
+    "#queryfilter": {
+        "prefix": "#queryfilter",
+        "body": "#queryfilter(${1:query}, ${2:asset})\n  ${3:body}\n#end",
+        "description": "Executes body logic on each asset matching a given query before maxResults() is applied. If body logic returns true, the asset will be included in the results."
+    },
+    "#querysortvalue": {
+        "prefix": "#querysortvalue",
+        "body": "#querysortvalue(${1:query}, ${2:asset})\n  ${3:body}\n#end",
+        "description": "Executes body logic on each asset to determine by which value the list should be sorted."
+    },
+    "#queryexecute": {
+        "prefix": "#queryexecute",
+        "body": "#queryexecute(${1:query}, ${2:asset})\n  ${3:body}\n#end",
+        "description": "Executes logic on each asset and outputs a result, allows for higher maxResults compared to execute()."
+    },
+    "$_DateTool.difference": {
+        "prefix": "$_DateTool.difference",
+        "body": "\\$_DateTool.difference(${1:now}, ${2:then})",
+        "description": "Returns a Comparison representing the difference between now and then."
+    },
+    "$_DateTool.format": {
+        "prefix": "$_DateTool.format",
+        "body": "\\$_DateTool.format(${1:format}, ${2:date})",
+        "description": "Returns a String representing a date in a specified format."
+    },
+    "$_DateTool.getCalendar": {
+        "prefix": "$_DateTool.getCalendar",
+        "body": "\\$_DateTool.getCalendar()",
+        "description": "Returns the current date as a Calendar."
+    },
+    "$_DateTool.getDate": {
+        "prefix": "$_DateTool.getDate",
+        "body": "\\$_DateTool.getDate(${1:date})",
+        "description": "Returns a date or the current date as a Date."
+    },
+    "$_DateTool.getDay": {
+        "prefix": "$_DateTool.getDay",
+        "body": "\\$_DateTool.getDay(${1:date})",
+        "description": "Returns a Number representing the day in a date or the current date."
+    },
+    "$_DateTool.getMonth": {
+        "prefix": "$_DateTool.getMonth",
+        "body": "\\$_DateTool.getMonth(${1:date})",
+        "description": "Returns a Number representing the month in a date or the current date."
+    },
+    "$_DateTool.getTime": {
+        "prefix": "$_DateTool.getTime",
+        "body": "\\$_DateTool.getTime()",
+        "description": "Returns a Number representing the current time."
+    },
+    "$_DateTool.getValue": {
+        "prefix": "$_DateTool.getValue",
+        "body": "\\$_DateTool.getValue(${1:field}, ${2:date})",
+        "description": "Returns an Integer representing the value for the field in the date."
+    },
+    "$_DateTool.getYear": {
+        "prefix": "$_DateTool.getYear",
+        "body": "\\$_DateTool.getYear(${1:date})",
+        "description": "Returns a Number representing the year in a date or the current date."
+    },
+    "$_DateTool.toDate": {
+        "prefix": "$_DateTool.toDate",
+        "body": "\\$_DateTool.toDate(${1:format}, ${2:date})",
+        "description": "Returns a date in the specified format as a Date."
+    },
+    "$_DateTool.toDays": {
+        "prefix": "$_DateTool.toDays",
+        "body": "\\$_DateTool.toDays(${1:time})",
+        "description": "Returns a Number representing the number of days between Unix Time 0 and a time."
+    },
+    "$_DateTool.toHours": {
+        "prefix": "$_DateTool.toHours",
+        "body": "\\$_DateTool.toHours(${1:time})",
+        "description": "Returns a Number representing the number of hours between Unix Time 0 and a time."
+    },
+    "$_DateTool.toMinutes": {
+        "prefix": "$_DateTool.toMinutes",
+        "body": "\\$_DateTool.toMinutes(${1:time})",
+        "description": "Returns a Number representing the number of minutes between Unix Time 0 and a time."
+    },
+    "$_DateTool.toMonths": {
+        "prefix": "$_DateTool.toMonths",
+        "body": "\\$_DateTool.toMonths(${1:time})",
+        "description": "Returns a Number representing the number of months between Unix Time 0 and a time."
+    },
+    "$_DateTool.toSeconds": {
+        "prefix": "$_DateTool.toSeconds",
+        "body": "\\$_DateTool.toSeconds(${1:time})",
+        "description": "Returns a Number representing the number of seconds between Unix Time 0 and a time."
+    },
+    "$_DateTool.toWeeks": {
+        "prefix": "$_DateTool.toWeeks",
+        "body": "\\$_DateTool.toWeeks(${1:time})",
+        "description": "Returns a Number representing the number of weeks between Unix Time 0 and a time."
+    },
+    "$_DateTool.toYears": {
+        "prefix": "$_DateTool.toYears",
+        "body": "\\$_DateTool.toYears(${1:time})",
+        "description": "Returns a Number representing the number of years between Unix Time 0 and a time."
+    },
+    "$_DateTool.whenIs": {
+        "prefix": "$_DateTool.whenIs",
+        "body": "\\$_DateTool.whenIs(${1:now}, ${2:then})",
+        "description": "Returns a Comparison representing the difference between now and then."
+    },
+    "$_DisplayTool.alt": {
+        "prefix": "$_DisplayTool.alt",
+        "body": "\\$_DisplayTool.alt(${1:value}, ${2:alternate})",
+        "description": "Returns the value of the object if defined, otherwise returns null or alternate."
+    },
+    "$_DisplayTool.br": {
+        "prefix": "$_DisplayTool.br",
+        "body": "\\$_DisplayTool.br(${1:message})",
+        "description": "Returns a String in which new line characters (\\n) are prepended with HTML line break tags (<br/>)."
+    },
+    "$_DisplayTool.capitalize": {
+        "prefix": "$_DisplayTool.capitalize",
+        "body": "\\$_DisplayTool.capitalize(${1:message})",
+        "description": "Returns a String in which the first letter is capitalized."
+    },
+    "$_DisplayTool.cell": {
+        "prefix": "$_DisplayTool.cell",
+        "body": "\\$_DisplayTool.cell(${1:message}, ${2:length}, ${3:suffix})",
+        "description": "Returns a String that is truncated or padded to length and appended with an optional suffix if truncated."
+    },
+    "$_DisplayTool.list": {
+        "prefix": "$_DisplayTool.list",
+        "body": "\\$_DisplayTool.list(${1:list}, ${2:separator}, ${3:lastSeparator})",
+        "description": "Returns String representing a list separated by a separator and optional lastSeparator."
+    },
+    "$_DisplayTool.message": {
+        "prefix": "$_DisplayTool.message",
+        "body": "\\$_DisplayTool.message(${1:message}, ${2:values})",
+        "description": "Returns String message formatted with values."
+    },
+    "$_DisplayTool.plural": {
+        "prefix": "$_DisplayTool.plural",
+        "body": "\\$_DisplayTool.plural(${1:amount}, ${2:singular}, ${3:plural})",
+        "description": "Returns a singular or plural word depending on the amount. If an alternative plural is not provided, basic rules of English pluralization will be used."
+    },
+    "$_DisplayTool.space": {
+        "prefix": "$_DisplayTool.space",
+        "body": "\\$_DisplayTool.space(${1:number})",
+        "description": "Returns a String containing the specified number of spaces."
+    },
+    "$_DisplayTool.stripTags": {
+        "prefix": "$_DisplayTool.stripTags",
+        "body": "\\$_DisplayTool.stripTags(${1:html}, ${2:allowedTags})",
+        "description": "Returns a String without HTML tags or with only specified allowedTags."
+    },
+    "$_DisplayTool.truncate": {
+        "prefix": "$_DisplayTool.truncate",
+        "body": "\\$_DisplayTool.truncate(${1:message}, ${2:length}, ${3:suffix}, ${4:truncateAtWord})",
+        "description": "Returns a String truncated to 30 characters or the specified length, appended with '...' or an optional suffix if truncated, and optionally truncated at the end of a word."
+    },
+    "$_DisplayTool.uncapitalize": {
+        "prefix": "$_DisplayTool.uncapitalize",
+        "body": "\\$_DisplayTool.uncapitalize(${1:message})",
+        "description": "Returns a String in which the first letter is uncapitalized."
+    },
+    "$_EscapeTool.getB": {
+        "prefix": "$_EscapeTool.getB",
+        "body": "\\$_EscapeTool.getB()",
+        "description": "Returns a backslash."
+    },
+    "$_EscapeTool.getD": {
+        "prefix": "$_EscapeTool.getD",
+        "body": "\\$_EscapeTool.getD()",
+        "description": "Returns a dollar sign."
+    },
+    "$_EscapeTool.getE": {
+        "prefix": "$_EscapeTool.getE",
+        "body": "\\$_EscapeTool.getE()",
+        "description": "Returns an exclamation mark."
+    },
+    "$_EscapeTool.getH": {
+        "prefix": "$_EscapeTool.getH",
+        "body": "\\$_EscapeTool.getH()",
+        "description": "Returns a hash / pound sign."
+    },
+    "$_EscapeTool.getN": {
+        "prefix": "$_EscapeTool.getN",
+        "body": "\\$_EscapeTool.getN()",
+        "description": "Returns a new line character."
+    },
+    "$_EscapeTool.getQ": {
+        "prefix": "$_EscapeTool.getQ",
+        "body": "\\$_EscapeTool.getQ()",
+        "description": "Returns a quotation mark."
+    },
+    "$_EscapeTool.getS": {
+        "prefix": "$_EscapeTool.getS",
+        "body": "\\$_EscapeTool.getS()",
+        "description": "Returns a single quote / apostrophe."
+    },
+    "$_EscapeTool.html": {
+        "prefix": "$_EscapeTool.html",
+        "body": "\\$_EscapeTool.html(${1:content})",
+        "description": "Returns an escaped HTML String."
+    },
+    "$_EscapeTool.javascript": {
+        "prefix": "$_EscapeTool.javascript",
+        "body": "\\$_EscapeTool.javascript(${1:content})",
+        "description": "Returns an escaped JavaScript String."
+    },
+    "$_EscapeTool.unescapeHtml": {
+        "prefix": "$_EscapeTool.unescapeHtml",
+        "body": "\\$_EscapeTool.unescapeHtml(${1:content})",
+        "description": "Returns an unescaped String containing HTML."
+    },
+    "$_EscapeTool.unescapeJavaScript": {
+        "prefix": "$_EscapeTool.unescapeJavaScript",
+        "body": "\\$_EscapeTool.unescapeJavaScript(${1:content})",
+        "description": "Returns an unescaped String containing JavaScript."
+    },
+    "$_EscapeTool.unescapeXml": {
+        "prefix": "$_EscapeTool.unescapeXml",
+        "body": "\\$_EscapeTool.unescapeXml(${1:content})",
+        "description": "Returns an unescaped String containing XML."
+    },
+    "$_EscapeTool.unicode": {
+        "prefix": "$_EscapeTool.unicode",
+        "body": "\\$_EscapeTool.unicode(${1:code})",
+        "description": "Returns a String representing a Unicode character."
+    },
+    "$_EscapeTool.url": {
+        "prefix": "$_EscapeTool.url",
+        "body": "\\$_EscapeTool.url(${1:content})",
+        "description": "Returns an escaped URL String."
+    },
+    "$_EscapeTool.xml": {
+        "prefix": "$_EscapeTool.xml",
+        "body": "\\$_EscapeTool.xml(${1:content})",
+        "description": "Returns an escaped XML String."
+    },
+    "$_FieldTool.in": {
+        "prefix": "$_FieldTool.in",
+        "body": "\\$_FieldTool.in(${1:object})",
+        "description": "Returns a Classes' public static variables."
+    },
+    "$_JsonTool.fetch": {
+        "prefix": "$_JsonTool.fetch",
+        "body": "\\$_JsonTool.fetch(${1:url})",
+        "description": "Returns a HashMap object representing a JSON object or an ArrayList representing an array of objects."
+    },
+    "$_JsonTool.fetchWithApiKey": {
+        "prefix": "$_JsonTool.fetchWithApiKey",
+        "body": "\\$_JsonTool.fetchWithApiKey(${1:url}, ${2:apiKey})",
+        "description": "Fetches a remote JSON resource with an API key parameter."
+    },
+    "$_ListTool.removeNull": {
+        "prefix": "$_ListTool.removeNull",
+        "body": "\\$_ListTool.removeNull(${1:list}, ${2:propertyName})",
+        "description": "Removes items from a List that either do not have a given propertyName or it is null."
+    },
+    "$_ListTool.reverse": {
+        "prefix": "$_ListTool.reverse",
+        "body": "\\$_ListTool.reverse(${1:list})",
+        "description": "Reverses a List."
+    },
+    "$_ListTool.shuffle": {
+        "prefix": "$_ListTool.shuffle",
+        "body": "\\$_ListTool.shuffle(${1:list})",
+        "description": "Shuffles a List."
+    },
+    "$_ListTool.toList": {
+        "prefix": "$_ListTool.toList",
+        "body": "\\$_ListTool.toList(${1:array})",
+        "description": "Converts an Array to a List."
+    },
+    "$_MathTool.abs": {
+        "prefix": "$_MathTool.abs",
+        "body": "\\$_MathTool.abs(${1:number})",
+        "description": "Returns the absolute value of a number."
+    },
+    "$_MathTool.add": {
+        "prefix": "$_MathTool.add",
+        "body": "\\$_MathTool.add(${1:numbers})",
+        "description": "Returns the sum of numbers."
+    },
+    "$_MathTool.ceil": {
+        "prefix": "$_MathTool.ceil",
+        "body": "\\$_MathTool.ceil(${1:number})",
+        "description": "Returns the smallest integer that is not less than the given number."
+    },
+    "$_MathTool.div": {
+        "prefix": "$_MathTool.div",
+        "body": "\\$_MathTool.div(${1:numbers})",
+        "description": "Returns the quotient of numbers or null if any denominator equals zero."
+    },
+    "$_MathTool.floor": {
+        "prefix": "$_MathTool.floor",
+        "body": "\\$_MathTool.floor(${1:number})",
+        "description": "Returns the integer portion of number."
+    },
+    "$_MathTool.getRandom": {
+        "prefix": "$_MathTool.getRandom",
+        "body": "\\$_MathTool.getRandom()",
+        "description": "Returns a pseudo-random Double greater than or equal to 0.0 and less than 1.0."
+    },
+    "$_MathTool.idiv": {
+        "prefix": "$_MathTool.idiv",
+        "body": "\\$_MathTool.idiv(${1:number1}, ${2:number2})",
+        "description": "Returns the result of performing integer division on number1 and number2."
+    },
+    "$_MathTool.max": {
+        "prefix": "$_MathTool.max",
+        "body": "\\$_MathTool.max(${1:numbers})",
+        "description": "Returns the maximum of numbers."
+    },
+    "$_MathTool.min": {
+        "prefix": "$_MathTool.min",
+        "body": "\\$_MathTool.min(${1:numbers})",
+        "description": "Returns the minimum of numbers."
+    },
+    "$_MathTool.mod": {
+        "prefix": "$_MathTool.mod",
+        "body": "\\$_MathTool.mod(${1:number1}, ${2:number2})",
+        "description": "Returns the result of performing integer modulus on number1 and number2."
+    },
+    "$_MathTool.mul": {
+        "prefix": "$_MathTool.mul",
+        "body": "\\$_MathTool.mul(${1:numbers})",
+        "description": "Returns the product of numbers."
+    },
+    "$_MathTool.pow": {
+        "prefix": "$_MathTool.pow",
+        "body": "\\$_MathTool.pow(${1:number1}, ${2:number2})",
+        "description": "Returns the result of number1 to the power of number2."
+    },
+    "$_MathTool.random": {
+        "prefix": "$_MathTool.random",
+        "body": "\\$_MathTool.random(${1:number1}, ${2:number2})",
+        "description": "Returns a pseudo-random number greater than or equal to number1 and less than number2."
+    },
+    "$_MathTool.round": {
+        "prefix": "$_MathTool.round",
+        "body": "\\$_MathTool.round(${1:number})",
+        "description": "Returns number rounded to the nearest whole integer."
+    },
+    "$_MathTool.roundTo": {
+        "prefix": "$_MathTool.roundTo",
+        "body": "\\$_MathTool.roundTo(${1:decimalPlaces}, ${2:number})",
+        "description": "Returns number rounded to the specified number of decimal places."
+    },
+    "$_MathTool.sub": {
+        "prefix": "$_MathTool.sub",
+        "body": "\\$_MathTool.sub(${1:numbers})",
+        "description": "Returns the difference of numbers (subtracted in order)."
+    },
+    "$_MathTool.toDouble": {
+        "prefix": "$_MathTool.toDouble",
+        "body": "\\$_MathTool.toDouble(${1:number})",
+        "description": "Returns number as a Double."
+    },
+    "$_MathTool.toInteger": {
+        "prefix": "$_MathTool.toInteger",
+        "body": "\\$_MathTool.toInteger(${1:number})",
+        "description": "Returns number as an Integer."
+    },
+    "$_MathTool.toNumber": {
+        "prefix": "$_MathTool.toNumber",
+        "body": "\\$_MathTool.toNumber(${1:number})",
+        "description": "Returns number as a Number."
+    },
+    "$_NumberTool.currency": {
+        "prefix": "$_NumberTool.currency",
+        "body": "\\$_NumberTool.currency(${1:object})",
+        "description": "Returns a String representing object formatted as currency."
+    },
+    "$_NumberTool.format": {
+        "prefix": "$_NumberTool.format",
+        "body": "\\$_NumberTool.format(${1:format}, ${2:object})",
+        "description": "Returns a String representing object in the given format."
+    },
+    "$_NumberTool.integer": {
+        "prefix": "$_NumberTool.integer",
+        "body": "\\$_NumberTool.integer(${1:object})",
+        "description": "Returns a String representing object formatted as an integer."
+    },
+    "$_NumberTool.isNumeric": {
+        "prefix": "$_NumberTool.isNumeric",
+        "body": "\\$_NumberTool.isNumeric(${1:object})",
+        "description": "Returns true if a given object is numeric."
+    },
+    "$_NumberTool.number": {
+        "prefix": "$_NumberTool.number",
+        "body": "\\$_NumberTool.number(${1:object})",
+        "description": "Returns a String representing object formatted as a number."
+    },
+    "$_NumberTool.percent": {
+        "prefix": "$_NumberTool.percent",
+        "body": "\\$_NumberTool.percent(${1:object})",
+        "description": "Returns a String representing object formatted as a percentage."
+    },
+    "$_NumberTool.toNumber": {
+        "prefix": "$_NumberTool.toNumber",
+        "body": "\\$_NumberTool.toNumber(${1:format}, ${2:object})",
+        "description": "Returns a Number representing object in the given format or null if no conversion is possible."
+    },
+    "$_NumberTool.withPadding": {
+        "prefix": "$_NumberTool.withPadding",
+        "body": "\\$_NumberTool.withPadding(${1:number}, ${2:minDigits})",
+        "description": "Returns a String representing number prefixed with zeroes (0) to match minDigits."
+    },
+    "$_NumberTool.sortable": {
+        "prefix": "$_NumberTool.sortable",
+        "body": "\\$_NumberTool.sortable(${1:number}, ${2:sortDirection})",
+        "description": "Returns a String representing number that can be used for string-based sorting. Defaults to sorting in ascending direction with an optional second parameter to specify sort direction (asc or desc)."
+    },
+    "$_PropertyTool.isArray": {
+        "prefix": "$_PropertyTool.isArray",
+        "body": "\\$_PropertyTool.isArray(${1:object})",
+        "description": "Returns true if the object is an array, otherwise false."
+    },
+    "$_PropertyTool.isIterable": {
+        "prefix": "$_PropertyTool.isIterable",
+        "body": "\\$_PropertyTool.isIterable(${1:object})",
+        "description": "Returns true if the object is an iterable data type (i.e. can be used with a Velocity #foreach loop), otherwise false."
+    },
+    "$_PropertyTool.isList": {
+        "prefix": "$_PropertyTool.isList",
+        "body": "\\$_PropertyTool.isList(${1:object})",
+        "description": "Returns true if the object is a list, otherwise false."
+    },
+    "$_PropertyTool.isMap": {
+        "prefix": "$_PropertyTool.isMap",
+        "body": "\\$_PropertyTool.isMap(${1:object})",
+        "description": "Returns true if the object is a map, otherwise false."
+    },
+    "$_PropertyTool.isSet": {
+        "prefix": "$_PropertyTool.isSet",
+        "body": "\\$_PropertyTool.isSet(${1:object})",
+        "description": "Returns true if the object is a set, otherwise false."
+    },
+    "$_PropertyTool.isString": {
+        "prefix": "$_PropertyTool.isString",
+        "body": "\\$_PropertyTool.isString(${1:object})",
+        "description": "Returns true if the object is a string, otherwise false."
+    },
+    "$_PropertyTool.isEmpty": {
+        "prefix": "$_PropertyTool.isEmpty",
+        "body": "\\$_PropertyTool.isEmpty(${1:object})",
+        "description": "Returns true if the object is null, an empty string, or contains only whitespace characters, otherwise false."
+    },
+    "$_PropertyTool.isNotEmpty": {
+        "prefix": "$_PropertyTool.isNotEmpty",
+        "body": "\\$_PropertyTool.isNotEmpty(${1:object})",
+        "description": "Returns false if the object is null or an empty string, otherwise true."
+    },
+    "$_PropertyTool.isNull": {
+        "prefix": "$_PropertyTool.isNull",
+        "body": "\\$_PropertyTool.isNull(${1:object})",
+        "description": "Returns true if object is null, otherwise false."
+    },
+    "$_PropertyTool.isNotNull": {
+        "prefix": "$_PropertyTool.isNotNull",
+        "body": "\\$_PropertyTool.isNotNull(${1:object})",
+        "description": "Returns true if object is not null, otherwise false."
+    },
+    "$_PropertyTool.outputFirstNotEmpty": {
+        "prefix": "$_PropertyTool.outputFirstNotEmpty",
+        "body": "\\$_PropertyTool.outputFirstNotEmpty(${1:properties})",
+        "description": "Returns a string of the first non-empty property in the list of properties provided."
+    },
+    "$_PropertyTool.outputProperties": {
+        "prefix": "$_PropertyTool.outputProperties",
+        "body": "\\$_PropertyTool.outputProperties(${1:object})",
+        "description": "Returns a list of all available properties and methods an object exposes as well its type."
+    },
+    "$_RegexTool.compile": {
+        "prefix": "$_RegexTool.compile",
+        "body": "\\$_RegexTool.compile(${1:regex})",
+        "description": "Returns a Pattern object representing a valid regular expression."
+    },
+    "$_SerializerTool.serialize": {
+        "prefix": "$_SerializerTool.serialize",
+        "body": "\\$_SerializerTool.serialize(${1:element}, ${2:removeRoot})",
+        "description": "Returns a String representing element as XML."
+    },
+    "$_SerializerTool.toJson": {
+        "prefix": "$_SerializerTool.toJson",
+        "body": "\\$_SerializerTool.toJson(${1:element}, ${2:removeRoot})",
+        "description": "Serialize XML to JSON."
+    },
+    "$_SortTool.addSortCriterion": {
+        "prefix": "$_SortTool.addSortCriterion",
+        "body": "\\$_SortTool.addSortCriterion(${1:xpath}, ${2:language}, ${3:dataType}, ${4:order}, ${5:caseOrder})",
+        "description": "Adds a new set of parameters to be used during the next sort()."
+    },
+    "$_SortTool.sort": {
+        "prefix": "$_SortTool.sort",
+        "body": "\\$_SortTool.sort(${1:objects}, ${2:properties})",
+        "description": "Returns a sorted List based on the values from addSortCriterion()."
+    },
+    "$_StringTool.generateUUID": {
+        "prefix": "$_StringTool.generateUUID",
+        "body": "\\$_StringTool.generateUUID()",
+        "description": "Returns a String that represents a randomly generated UUID."
+    },
+    "$_StringTool.getStringBuilder": {
+        "prefix": "$_StringTool.getStringBuilder",
+        "body": "\\$_StringTool.getStringBuilder()",
+        "description": "Returns a new StringBuilder instance."
+    },
+    "$_StringTool.substringAfter": {
+        "prefix": "$_StringTool.substringAfter",
+        "body": "\\$_StringTool.substringAfter(${1:haystack}, ${2:needle})",
+        "description": "Returns a String that exists after the needle in the haystack."
+    },
+    "$_StringTool.substringBefore": {
+        "prefix": "$_StringTool.substringBefore",
+        "body": "\\$_StringTool.substringBefore(${1:haystack}, ${2:needle})",
+        "description": "Returns a String that exists before the needle in the haystack."
+    },
+    "$_XPathTool.selectNodes": {
+        "prefix": "$_XPathTool.selectNodes",
+        "body": "\\$_XPathTool.selectNodes(${1:content}, ${2:xpath})",
+        "description": "Returns a List of nodes matching a given xpath expression within content."
+    },
+    "$_XPathTool.selectSingleNode": {
+        "prefix": "$_XPathTool.selectSingleNode",
+        "body": "\\$_XPathTool.selectSingleNode(${1:content}, ${2:xpath})",
+        "description": "Returns a Node matching a given xpath expression within content."
+    },
+    ".metadata": {
+        "prefix": ".metadata",
+        "body": ".metadata",
+        "description": "Returns a metadata object."
+    },
+    ".metadata.title": {
+        "prefix": ".metadata.title",
+        "body": ".metadata.title",
+        "description": "Returns the Title of the asset."
+    },
+    ".metadata.displayName": {
+        "prefix": ".metadata.displayName",
+        "body": ".metadata.displayName",
+        "description": "Returns the Display Name of the asset."
+    },
+    ".metadata.summary": {
+        "prefix": ".metadata.summary",
+        "body": ".metadata.summary",
+        "description": "Returns the Summary of the asset."
+    },
+    ".metadata.teaser": {
+        "prefix": ".metadata.teaser",
+        "body": ".metadata.teaser",
+        "description": "Returns the Teaser of the asset."
+    },
+    ".metadata.keywords": {
+        "prefix": ".metadata.keywords",
+        "body": ".metadata.keywords",
+        "description": "Returns the Keywords of the asset."
+    },
+    ".metadata.description": {
+        "prefix": ".metadata.description",
+        "body": ".metadata.description",
+        "description": "Returns the Description of the asset."
+    },
+    ".metadata.author": {
+        "prefix": ".metadata.author",
+        "body": ".metadata.author",
+        "description": "Returns the Author of the asset."
+    },
+    ".metadata.startDate": {
+        "prefix": ".metadata.startDate",
+        "body": ".metadata.startDate",
+        "description": "Returns the Start Date of the asset."
+    },
+    ".metadata.endDate": {
+        "prefix": ".metadata.endDate",
+        "body": ".metadata.endDate",
+        "description": "Returns the End Date of the asset."
+    },
+    ".metadata.reviewDate": {
+        "prefix": ".metadata.reviewDate",
+        "body": ".metadata.reviewDate",
+        "description": "Returns the Review Date of the asset."
+    },
+    ".metadata.getDynamicField": {
+        "prefix": ".metadata.getDynamicField",
+        "body": ".metadata.getDynamicField(\"${0:field name}\")",
+        "description": "Returns the Dynamic/Custom metadata field of the asset"
+    },
+    "Asset.label": {
+        "prefix": ".label",
+        "body": ".label",
+        "description": "Returns Display Name if it exists, Title if it exists and Display name is empty. If neither exists, returns asset name."
+    },
+    "Asset.name": {
+        "prefix": ".name",
+        "body": ".name",
+        "description": "Returns name of the page."
+    },
+    "Asset.link": {
+        "prefix": ".link",
+        "body": ".link",
+        "description": "Returns the link to the page."
+    },
+    "Asset.path": {
+        "prefix": ".path",
+        "body": ".path",
+        "description": "Returns path of the page."
+    },
+    "Asset.assetType": {
+        "prefix": ".path",
+        "body": ".path",
+        "description": "Returns path of the page."
+    },
+    "Asset.tags": {
+        "prefix": ".tags",
+        "body": ".tags",
+        "description": "Returns the tags of the asset as an array."
+    },
+    "Asset.parentFolder": {
+        "prefix": ".parentFolder",
+        "body": ".parentFolder",
+        "description": "Returns the parent folder of the asset. Can use all asset properties on this."
+    },
+    ".getStructuredDataNode": {
+        "prefix": ".getStructuredDataNode",
+        "body": ".getStructuredDataNode(\"${0: node}\")",
+        "description": "Returns a data definition node of the identifier."
+    },
+    ".getChild": {
+        "prefix": ".getChild",
+        "body": ".getChild(\"${0: node}\")",
+        "description": "Returns the node from the data definition."
+    },
+    ".getChildren": {
+        "prefix": ".getChildren",
+        "body": ".getChildren(\"${0: node}\")",
+        "description": "Returns an array of nodes from the data definition."
+    },
+    ".textValue": {
+        "prefix": ".textValue",
+        "body": ".textValue",
+        "description": "Returns the value of Text Field, Text Area, WYSIWYG, Radio Buttons, and Drop Downs."
+    },
+    ".textValues": {
+        "prefix": ".textValues",
+        "body": ".textValues",
+        "description": "Returns the value of a Check Box."
+    },
+    ".asset": {
+        "prefix": ".asset",
+        "body": ".asset",
+        "description": "Makes a database call and returns info on Page, File, or Block Choosers."
     }
 }
