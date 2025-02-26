@@ -2,10 +2,6 @@
 
 -   Apache Velocity Template Language (VTL) with Hannon Hill's Cascade Velocity Tools support for Visual Studio Code
 
-## ScreenShot
-
-![ScreenShot](https://s26.postimg.org/j656uhajd/WX20170909-010112_2x.png)
-
 ## TIPS
 
 -   You can add `"emmet.includeLanguages": {"velocity": "html"}` in your user setting for enable emmet in velocity!
