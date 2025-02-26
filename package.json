@@ -1,12 +1,12 @@
 {
-    "name": "velocity",
-    "displayName": "Apache Velocity",
-    "description": "The Apache Velocity support for Visual Studio Code",
-    "version": "0.7.1",
-    "publisher": "luqimin",
+    "name": "cascade-velocity",
+    "displayName": "Cascade & Apache Velocity",
+    "description": "The Apache Velocity & Cascade support for Visual Studio Code",
+    "version": "0.8.0",
+    "publisher": "ZacheryMorgan",
     "repository": {
         "type": "git",
-        "url": "https://github.com/luqimin/tinyvm"
+        "url": "https://github.com/ZacheryMorgan/cascade-velocity"
     },
     "engines": {
         "vscode": "^1.0.0"
