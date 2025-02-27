@@ -584,7 +584,7 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-						 ((\$ \!?   ) [a-zA-Z][-a-zA-Z0-9_]* \b) 
+						 ((\$ \!? \_?  ) [a-zA-Z][-a-zA-Z0-9_]* \b) 
 							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)* ) 
 							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)+ ) (\()\s* 
 					</string>
