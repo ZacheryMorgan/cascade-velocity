@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.8.2 | 2025.02.27
+
+-   update tmLanguage to include $\_
+
 ## 0.8.0 | 2025.02.26
 
 -   forked and added Cascade's Velocity Tools

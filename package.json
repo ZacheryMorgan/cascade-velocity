@@ -2,7 +2,7 @@
     "name": "cascade-velocity",
     "displayName": "Cascade & Apache Velocity",
     "description": "The Apache Velocity & Cascade support for Visual Studio Code",
-    "version": "0.8.1",
+    "version": "0.8.2",
     "publisher": "ZacheryMorgan-UNCW",
     "repository": {
         "type": "git",
