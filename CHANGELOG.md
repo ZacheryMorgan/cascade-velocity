@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.8.3 | 2025.02.28
+
+-   update to remove styling on properties and methods
+-   update $\_ actions to be different from variables
+-   add passthrough and protect snippets
+
 ## 0.8.2 | 2025.02.27
 
 -   update tmLanguage to include $\_
