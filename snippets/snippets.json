@@ -1098,5 +1098,15 @@
         "prefix": ".asset",
         "body": ".asset",
         "description": "Makes a database call and returns info on Page, File, or Block Choosers."
+    },
+    "passthrough": {
+        "prefix": "passthrough",
+        "body": "<!--#passthrough\r\n\t${0:code}\r\n#passthrough-->",
+        "description": "Passthrough code sections instruct the interpreter to exclude the enclosed code when the page is being previewed internally. Upon publishing, the contents of these tags will be uncommented and included in the final page."
+    },
+    "protect": {
+        "prefix": "protect",
+        "body": "<![CDATA[#protect\r\n\t${0:code}\r\n#protect]]>",
+        "description": "Same as passthrough however this is also rendered within Cascade. For client side code."
     }
 }

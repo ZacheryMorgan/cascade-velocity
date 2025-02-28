@@ -584,7 +584,7 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-						 ((\$ \!? \_?  ) [a-zA-Z][-a-zA-Z0-9_]* \b) 
+						 ((\$ \!? ) [a-zA-Z][-a-zA-Z0-9_]* \b) 
 							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)* ) 
 							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)+ ) (\()\s* 
 					</string>
@@ -610,16 +610,86 @@
 							<key>name</key>
 							<string>variable.parameter.velocity</string>
 						</dict>
-						<key>4</key>
+						<!-- <key>4</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.separator.parameters.velocity</string>
-						</dict>
-						<key>5</key>
+						</dict> -->
+						<!-- <key>5</key>
 						<dict>
 							<key>name</key>
 							<string>entity.name.function.velocity</string>
+						</dict> -->
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.function.velocity</string>
 						</dict>
+						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arguments.begin.velocity</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\s*(\))</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arguments.end.velocity</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>source.velocity.embedded</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#function-arguments</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+						 ((\$_ \!?  ) [a-zA-Z][-a-zA-Z0-9_]* \b) 
+							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)* ) 
+							( (?:(\.) [a-zA-Z][-a-zA-Z0-9_]* \b)+ ) (\()\s* 
+					</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.function-call.method.with-arguments.velocity</string>
+						</dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.special.velocity</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.velocity</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.velocity</string>
+						</dict>
+						<!-- <key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.parameters.velocity</string>
+						</dict> -->
+						<!-- <key>5</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.velocity</string>
+						</dict> -->
 						<key>6</key>
 						<dict>
 							<key>name</key>
